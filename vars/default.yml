@@ -1,0 +1,17 @@
+---
+
+#These is a default var file, make changes as required.
+
+#System Settings 
+php_modules: [ 'php-curl', 'php-gd', 'php-mbstring', 'php-xml', 'php-xmlrpc', 'php-soap', 'php-intl', 'php-zip' ]
+
+#MySQL Settings
+mysql_root_password: "manan"
+mysql_db: "wordpress"
+mysql_user: "ubuntu"
+mysql_password: "password"
+
+#HTTP Settings
+http_host: "ansiblewp.com"
+http_conf: "ansiblewp.conf"
+http_port: "80"
