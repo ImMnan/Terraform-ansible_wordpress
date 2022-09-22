@@ -75,7 +75,7 @@ resource "aws_instance" "web" {
   }
 
   provisioner "local-exec" {
-    command = "ansible-playbook -i myhosts --user ${local.ssh_user} --private-key ${local.private_key_path} initiate.yaml"
+    command = "ansible-playbook -i myhosts --user ${local.ssh_user} --private-key ${local.private_key_path} initiate.yml"
   }
 
 }
