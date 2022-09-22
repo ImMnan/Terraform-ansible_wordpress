@@ -1,20 +1,20 @@
 locals {
   ami_id = "ami-09e67e426f25ce0d7"
-  vpc_id = "vpc-04a9948fc461b1052"
+  vpc_id = "vpc-01b7844d367765b11"
   ssh_user = "ubuntu"
-  key_name = "Demokey"
-  private_key_path = "/home/labsuser/Demokey.pem"
+  key_name = "wpkey"
+  private_key_path = "/home/labsuser/wpkey.pem"
 }
 
 provider "aws" {
   region     = "us-east-1"
-  access_key = "ASIAVSUEUSV4FVFIL6HL"
-  secret_key = "V6GRH1uIrhtDBuaH6MOXb+yytYyaqjrI7YVg72fS"
-  token = "FwoGZXIvYXdzENz//////////wEaDBy1jNzrLm5vbygp4iK0AeJWFZxjjhurdHXLgaSCNHUWPgTG8z1BYiH2Hr5r3/QcRbp04WzvygFByC6iObaX76JCvfA9yueweplvahca2rMfa4GlTjuWYO3Hz6Nh3SX7BrGmnmemsHTgCeqCI6cy7GvZSYXi1e4UNFpXDzwPgtPJpmXrLpkIqo76U5/FY+MlxecchdBIRc7dyoJh7oKCUSVBNI78h2I0Qhm7LpnGGQdCHnqZcCAxL6lpbn6lKjqtVsMpUCiQ16uZBjItNVGZWMj8YUXd2BeTyStPgDegZHhaqcq4Kk1QOSWsnwd9cFreFoHOECOfFT4j"
+  access_key = "ASIAVSUEUSV4NRO32M2X"
+  secret_key = "HJo+iPpdITfttFjsSkl8kKHrMY+9ganEHNMCIhFo"
+  token = "FwoGZXIvYXdzEO3//////////wEaDLuiwxaQ4DxkZ4HK2iK0ATs2lcDG60oTOOs41tQ158PHb6hK3igCLTWZimtHwQn1C71Igph9rt9z0s5OKeoUT/VEp2IUa5SKe/KAc0T720PbOqT02WgFkT1zxpgXBxIJ3f35kVlVlpdpeUP3qNnPAkeU4AZAE6Rm5CCZdTAhfR4e2piLnLwQUwTL5nTiEZcS3bkF+wmQOBiJCCUS6Hsj8wODYsiDYEIUxHDx24Yx5ylM55mYYVNXfBsKPDFZBofpVSQb+CjWrq+ZBjItWoMRM/NigHN4c8yWv4Ms0cFNtxWtVaJroWvsjefRDAvffJFCUma23yEBp/cE"
 }
 
-resource "aws_security_group" "demoaccess" {
-	name   = "demoaccess"
+resource "aws_security_group" "wpaccess" {
+	name   = "wpaccess"
 	vpc_id = local.vpc_id
     
   ingress {
@@ -49,11 +49,11 @@ resource "aws_instance" "web" {
   ami = local.ami_id
   instance_type = "t2.micro"
   associate_public_ip_address = "true"
-  vpc_security_group_ids =[aws_security_group.demoaccess.id]
+  vpc_security_group_ids =[aws_security_group.wpaccess.id]
   key_name = local.key_name
 
   tags = {
-    Name = "Demo ec2"
+    Name = "wp ec2"
   }
 
   connection {
