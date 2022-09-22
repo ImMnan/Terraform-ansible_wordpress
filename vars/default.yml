@@ -6,10 +6,10 @@
 php_modules: [ 'php-curl', 'php-gd', 'php-mbstring', 'php-xml', 'php-xmlrpc', 'php-soap', 'php-intl', 'php-zip' ]
 
 #MySQL Settings
-mysql_root_password: "manan"
+mysql_root_password: "password123"
 mysql_db: "wordpress"
 mysql_user: "ubuntu"
-mysql_password: "password"
+mysql_password: "password123"
 
 #HTTP Settings
 http_host: "ansiblewp.com"
