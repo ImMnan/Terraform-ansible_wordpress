@@ -11,9 +11,8 @@ Index
 - [2] Configurations
 - [3] Terraform script
 - [4] Ansible playbook
-- [5] Git Push
-- [6] Init, Plan + Apply
-- [7] Wordpress ready - Conclusion
+- [5] Init, Plan + Apply
+- [6] Wordpress ready - Conclusion
 
 
 [1] Pre-requisites
@@ -144,7 +143,7 @@ $ nano wp-config.php.j2
 
 
 
-[6.0] Init, Plan and Apply
+[5.0] Init, Plan and Apply
 
 Everything is updated now. We can run main.tf using terraform, which will automatically run the ansible-playbook (see [3.0]).
 $ terraform apply
@@ -155,7 +154,7 @@ $ terraform apply
   (we are using —auto-approve, so we are not required to enter yes when it prompts)
 
 
-[7.0] Wordpress ready - Conclusion
+[6.0] Wordpress ready - Conclusion
 
 Now that Terraform and Ansible has completed resource creation, provisioning and configuring the remove system, we are able to access Wordpress server through the public Ip.
 
